@@ -6,8 +6,9 @@
         hapyak.viewer({
             gzip: true,
             player: vjs,
+            environment: 'feature',
             userId: 'kaiiscranky',
-            //apiKey: '1a88de4bb4d7f969c1282ff5910602f9',
+            apiKey: 'e60c6227ec3d70d1e8391365987cf57e',
             videoType: "videojs",
             trackId: 2627,
             autoplay: false

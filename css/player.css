@@ -1,4 +1,5 @@
-.hapyak-play-box > .hapyak-annotation-container > .popcorn-pop {
+.hapyak-play-box > .hapyak-annotation-container > .popcorn-pop,
+#video > .hapyak-annotation-container > .popcorn-pop {
 	background-color: transparent;
 	color: white;
 	border: none;
