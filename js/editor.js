@@ -35,12 +35,12 @@
             environment: 'feature',
             width: 960,
             videoType: 'html5',
-            videoUrl: 'http://localhost:8888/code/geeta/video/placeholder.mp4',
+            videoUrl: 'http://video.chirls.com/geeta/placeholder.mp4',
             css: 'http://localhost:8888/code/geeta/css/player.css',
             group: 'tfi',
             apiKey: key,
             userId: 'kaiiscranky',
-            trackId: 2626,
+            trackId: 2627,
             onLoadTrack: function (p) {
                 console.log('hapyak.editor.onLoadTrack reported to parent page [' + p.videoId + ', ' + p.trackId + ']');
             },
