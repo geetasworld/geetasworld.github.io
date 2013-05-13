@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Geeta's World</title>
+    <script type="text/javascript" src="http://cdn-assets.hapyak.com/js/hapyak.gz.js"></script>
+    <link rel="stylesheet" href="//vjs.zencdn.net/c/video-js.css">
+    <script src="//vjs.zencdn.net/c/video.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/player.css"/>
+  </head>
+  <body>
+        <div class="container" id="container">
+            <video id="video" controls class="video-js vjs-default-skin">
+                <source src="video/placeholder.mp4" type="video/mp4" />
+            </video>
+        </div>
+    <script src="js/main.js"></script>
+    <script>
+        // Make sure we scale the container element and keep the aspect ratio
+        var elem = document.getElementById( "container" );
+        window.addEventListener( "resize", function() {
+            elem.style.height = ( elem.offsetWidth * 0.4425 ) + "px";
+        }, false);
+        elem.style.height = ( elem.offsetWidth * 0.4425) + "px";
+    </script>
+  </body>
+</html>

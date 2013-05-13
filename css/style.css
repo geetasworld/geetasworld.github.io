@@ -1,0 +1,21 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+#container {
+    width: 960px;
+    height: 540px;
+    margin: auto;
+}
+
+/*
+Apparently this is the reccomended method of setting videojs to be 100% of its container
+http://help.videojs.com/discussions/questions/249-how-to-set-video-height-and-width-to-fill-available-space
+*/
+#video {
+    height: 100% !important;
+    width: 100% !important;
+}

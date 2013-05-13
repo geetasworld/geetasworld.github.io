@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Geeta's World - Editor</title>
+        <script type="text/javascript" src="http://cdn-assets.hapyak.com/js/hapyak.gz.js"></script>
+        <link rel="stylesheet" href="//vjs.zencdn.net/c/video-js.css">
+        <script src="//vjs.zencdn.net/c/video.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <style type="text/css">
+            #login-form {
+                display: none;
+                padding: 40px;
+                color: #999;
+            }
+
+            .login #login-form {
+                display: block;
+                width: 400px;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="login-form">
+                <label for="apikey">Enter API Key:</label>
+                <input type="password" id="apikey"/>
+                <button id="login">Log in</button>
+            </div>
+        </div>
+        <script src="js/editor.js"></script>
+        <!--
+        <script>
+            // Make sure we scale the container element and keep the aspect ratio
+            var elem = document.getElementById( "container" );
+            window.addEventListener( "resize", function() {
+                elem.style.height = ( elem.offsetWidth * 0.4425 ) + "px";
+            }, false);
+            elem.style.height = ( elem.offsetWidth * 0.4425) + "px";
+        </script>
+    -->
+    </body>
+</html>
