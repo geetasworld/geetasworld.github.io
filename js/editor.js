@@ -4,8 +4,12 @@
     var hapyakEditor,
         container = document.getElementById('container'),
         apikey = document.getElementById('apikey'),
-        login;
+        login,
+        path;
 
+    //calculate css path
+    path = window.location.href.split('/');
+    path.pop();
 
     function setUpEditor(key) {
         try {
@@ -36,7 +40,7 @@
             width: 960,
             videoType: 'html5',
             videoUrl: 'http://video.chirls.com/geeta/placeholder.mp4',
-            css: 'http://localhost:8888/code/geeta/css/player.css',
+            css: path.join('/') + '/css/player.css',
             group: 'tfi',
             apiKey: key,
             userId: 'kaiiscranky',
