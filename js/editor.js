@@ -5,13 +5,15 @@
         container = document.getElementById('container'),
         apikey = document.getElementById('apikey'),
         login,
-        path;
+        path,
+        videoName = window.location.hash && window.location.hash.substr(1) || 'placeholder',
+        videoUrl = 'http://video.chirls.com/geeta/' + videoName + '.mp4';
 
     //calculate css path
     path = window.location.href.split('/');
     path.pop();
 
-    function setUpEditor(key) {
+    function setUpEditor(key, url) {
         try {
             if (key) {
                 localStorage.hapyakApiKey = key;
@@ -24,7 +26,7 @@
             if (!login) {
                 login = document.getElementById('login');
                 login.addEventListener('click', function () {
-                    setUpEditor(apikey.value);
+                    setUpEditor(apikey.value, url);
                 }, false);
             }
 
@@ -39,12 +41,12 @@
             environment: 'feature',
             width: 960,
             videoType: 'html5',
-            videoUrl: 'http://video.chirls.com/geeta/placeholder.mp4',
+            videoUrl: url,
             css: path.join('/') + '/css/player.css',
             group: 'tfi',
             apiKey: key,
             userId: 'kaiiscranky',
-            trackId: 2627,
+            //trackId: 2627,
             onLoadTrack: function (p) {
                 console.log('hapyak.editor.onLoadTrack reported to parent page [' + p.videoId + ', ' + p.trackId + ']');
             },
@@ -63,5 +65,5 @@
         });
     }
 
-    setUpEditor();
+    setUpEditor(null, videoUrl);
 })(this.hapyak);
