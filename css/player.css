@@ -4,9 +4,73 @@
 	color: white;
 	border: none;
 	box-shadow: none;
-
 	background-color: rgba(20, 20, 20, 0.4);
 	padding: 12px;
 	border-radius: 0;
 	font-family: 'Helvetica Neue', 'Helvetica';
+}
+
+.hapyak-annotation-container > .popcorn-bookmark-title {
+	height: 30%;
+	width: 45%;
+	left: 50%;
+	top: 50%;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child > div {
+	color: black;
+	background-color: rgb(255, 198, 21);
+	font-family: 'Open Sans', sans-serif;
+	line-height: 60px;
+	font-size: 38px;
+	font-weight: bold;
+}
+
+.hapyak-annotation-container > .popcorn-bookmark-title > div > .popcorn-bookmark-close {
+	display: none;
+}
+
+.hapyak-annotation-container > .hapyak-transition-fade {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.hapyak-annotation-container > .active.hapyak-transition-fade {
+	-webkit-transition: opacity .5s ease,visibility .5s ease;
+	-moz-transition: opacity .5s ease,visibility .5s ease;
+	-o-transition: opacity .5s ease,visibility .5s ease;
+	-ms-transition: opacity .5s ease,visibility .5s ease;
+	transition: opacity .5s ease,visibility .5s ease;
+	visibility: visible;
+	opacity: 1;
+}
+
+.hapyak-annotation-container > .hapyak-transition-slide-up.active {
+    -webkit-transition: margin-top .4s ease,visibility .4s ease;
+    -moz-transition: margin-top .4s ease,visibility .4s ease;
+    -o-transition: margin-top .4s ease,visibility .4s ease;
+    -ms-transition: margin-top .4s ease,visibility .4s ease;
+    transition: margin-top .4s ease,visibility .4s ease;
+    visibility: visible;
+    margin-top: 0;
+}
+
+.hapyak-annotation-container > .hapyak-transition-slide-up {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+	visibility: hidden;
+	margin-top: 100%;
 }
