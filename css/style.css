@@ -20,6 +20,7 @@ body.playing {
     margin: auto;
 }
 
+/*
 .select > div,
 .select > input {
     border: none;
@@ -32,3 +33,4 @@ body.playing {
 .select > div {
     cursor: pointer;
 }
+*/
