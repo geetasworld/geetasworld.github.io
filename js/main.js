@@ -118,6 +118,17 @@
     for (i = 0, l = buttons.length; i < l; i++) {
         buttons[i].addEventListener('click', function() {
             loadVideo(tweets, this.getAttribute('data-trackid'), this.getAttribute('data-target').split('#')[1]);
+            $(this.getAttribute('data-target')).on('show', function onShow() {
+                var video = this.querySelector('video'),
+                    self = this;
+
+                $(this).off('show', onShow);
+
+                video.addEventListener('ended', function endedEvent() {
+                    $(self).modal('hide');
+                    this.removeEventListener('ended', endedEvent, false);
+                }, false);
+            })
         }, false);
     }
 
