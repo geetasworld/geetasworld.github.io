@@ -38,6 +38,12 @@ body {
     position: absolute;
     font-style: italic;
     color: #FBBA15;
+    opacity: 0.5
+}
+
+.chapter.active {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .chapter > .title {

@@ -120,5 +120,9 @@
         }, false);
     }
 
+    document.getElementById('chapter1').addEventListener('click', function () {
+        $('#video1').modal('show');
+    }, false);
+
     loadTweets();
 })();
