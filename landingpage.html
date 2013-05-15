@@ -50,15 +50,17 @@
 				</video>
 				<img id="path" src="imgs/path.png"/>
 
+				<img id="title-logo" src="imgs/title-logo.png"/>
+
 				<!--
 				Chapter Buttons:
 				-->
-				<div class="chapter active" id="chapter1" data-trackid="2643" data-toggle="modal" data-target="#video1">
+				<div class="chapter" id="chapter1" data-trackid="2643" data-toggle="modal" data-target="#video1">
 					Chapter <span class="number">1</span>
 					<div class="title">I am a taxi driver</div>
 				</div>
 
-				<div class="chapter" id="chapter2">
+				<div class="chapter" id="chapter2" data-trackid="2648" data-toggle="modal" data-target="#video2">
 					Chapter <span class="number">2</span>
 					<div class="title">What's a girl doing here?</div>
 				</div>
@@ -68,7 +70,7 @@
 					<div class="title">My father doesn't know better</div>
 				</div>
 
-				<div class="chapter" id="chapter4">
+				<div class="chapter" id="chapter4" data-trackid="2645" data-toggle="modal" data-target="#video2">
 					Chapter <span class="number">4</span>
 					<div class="title">Women don't do that in this country</div>
 				</div>
@@ -79,6 +81,10 @@
 				</div>
 			</div>
 		</div>
+
+		<!--
+		Video player containers
+		-->
 		<div id="video1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-body">
 				<video width="100%" height="100%">
@@ -86,6 +92,39 @@
 				</video>
 			</div>
 		</div>
+
+		<div id="video2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-body">
+				<video width="100%" height="100%">
+					<source src="http://video.chirls.com/geeta/chapter2.mp4" type="video/mp4" />
+				</video>
+			</div>
+		</div>
+
+		<div id="video3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-body">
+				<video width="100%" height="100%">
+					<source src="http://video.chirls.com/geeta/chapter3.mp4" type="video/mp4" />
+				</video>
+			</div>
+		</div>
+
+		<div id="video4" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-body">
+				<video width="100%" height="100%">
+					<source src="http://video.chirls.com/geeta/chapter4.mp4" type="video/mp4" />
+				</video>
+			</div>
+		</div>
+
+		<div id="video5" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-body">
+				<video width="100%" height="100%">
+					<source src="http://video.chirls.com/geeta/chapter5.mp4" type="video/mp4" />
+				</video>
+			</div>
+		</div>
+
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="external/js/bootstrap.min.js"></script>
 		<script src="//vjs.zencdn.net/c/video.js"></script>

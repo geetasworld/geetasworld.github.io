@@ -7,9 +7,11 @@
         tweets,
         modals = document.querySelectorAll('.modal'),
         loaded = [],
-        buttons = document.querySelectorAll('.chapter');
+        buttons = document.querySelectorAll('.chapter'),
+        playableVideo = 0,
+        variables = {};
 
-    function loadVideo(tweets, trackid, elementid) {
+    function loadVideo(trackid, elementid) {
         // Only load videos once
         if (loaded.indexOf(trackid) > -1) {
             return;
@@ -17,13 +19,6 @@
         loaded.push(trackid);
         vjs = VideoJS(document.getElementById(elementid).querySelector('video'));
         vjs.ready(function () {
-            var variables = {},
-                i, l;
-
-            for (i = 0, l = Math.min(9, tweets.length); i < l; i++) {
-                variables['tweet' + (i + 1)] = tweets[i].cleanedText;
-            }
-
             hapyak.viewer({
                 gzip: true,
                 player: vjs,
@@ -94,8 +89,44 @@
         document.head.appendChild(script);
     }
 
+    function makeVideoPlayable(index) {
+        var button;
+
+        if (index + 1 < playableVideo || index > playableVideo) {
+            return;
+        }
+
+        button = buttons[index];
+        button.className = 'chapter active';
+
+        loadVideo(button.getAttribute('data-trackid'), button.getAttribute('data-target').split('#')[1]);
+
+        button.addEventListener('click', function() {
+            $(this.getAttribute('data-target')).on('show', function onShow() {
+                var video = this.querySelector('video'),
+                    self = this;
+
+                $(this).off('show', onShow);
+
+                video.currentTime = 0;
+
+                playableVideo = Math.max(index + 1, playableVideo);
+
+                video.addEventListener('ended', function endedEvent() {
+                    $(self).modal('hide');
+                    this.removeEventListener('ended', endedEvent, false);
+                }, false);
+
+                video.play();
+
+                makeVideoPlayable(playableVideo);
+            })
+        }, false);
+    }
+
     window.receiveTweets = function(data) {
         var i,
+            l,
             data_tweets = data.results;
 
         for (i = 0; i < data_tweets.length; i++) {
@@ -105,6 +136,12 @@
         data_tweets.sort(tweetSort);
 
         tweets = data_tweets;
+
+        for (i = 0, l = Math.min(9, tweets.length); i < l; i++) {
+            variables['tweet' + (i + 1)] = tweets[i].cleanedText;
+        }
+
+        makeVideoPlayable(0);
     };
 
     for (i = 0, l = modals.length; i < l; i++) {
@@ -112,25 +149,6 @@
             var video = this.querySelector('video');
             video.pause();
         });
-    }
-
-    for (i = 0, l = buttons.length; i < l; i++) {
-        buttons[i].addEventListener('click', function() {
-            loadVideo(tweets, this.getAttribute('data-trackid'), this.getAttribute('data-target').split('#')[1]);
-            $(this.getAttribute('data-target')).on('show', function onShow() {
-                var video = this.querySelector('video'),
-                    self = this;
-
-                $(this).off('show', onShow);
-
-                video.currentTime = 0;
-                video.play();
-                video.addEventListener('ended', function endedEvent() {
-                    $(self).modal('hide');
-                    this.removeEventListener('ended', endedEvent, false);
-                }, false);
-            })
-        }, false);
     }
 
     loadTweets();
