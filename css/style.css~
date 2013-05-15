@@ -102,3 +102,15 @@ body {
     left: 57%;
     text-align: left;
 }
+/*
+Apparently this is the reccomended method of setting videojs to be 100% of its container
+http://help.videojs.com/discussions/questions/249-how-to-set-video-height-and-width-to-fill-available-space
+*/
+/*
+video {
+    height: 100% !important;
+    width: 100% !important;
+}
+*/
+=======
+>>>>>>> Fixed issue where videojs video was sometimes not 100% width/height of its container.

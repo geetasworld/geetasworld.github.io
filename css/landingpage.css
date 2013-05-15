@@ -24,3 +24,8 @@
 	height: 98%;
 	width: 98%;
 }
+
+.modal-body > div {
+    height: 100% !important;
+    width: 100% !important;
+}

@@ -110,12 +110,13 @@
     for (i = 0, l = modals.length; i < l; i++) {
         $('#' + modals[i].id).on('hide', function() {
             var video = this.querySelector('video');
+            video.pause();
+            video.currentTime = 0;
         });
     }
 
     for (i = 0, l = buttons.length; i < l; i++) {
         buttons[i].addEventListener('click', function() {
-            console.log(this.getAttribute('data-trackid'));
             loadVideo(tweets, this.getAttribute('data-trackid'), this.getAttribute('data-target').split('#')[1]);
         }, false);
     }
