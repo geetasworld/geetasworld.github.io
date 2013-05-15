@@ -1,44 +1,40 @@
 (function () {
     'use strict';
 
-    var videoName = window.location.hash && window.location.hash.substr(1) || 'placeholder',
-        sourceElem = document.createElement('source'),
-        vjs;
+    var vjs,
+        i,
+        l,
+        tweets,
+        modals = document.querySelectorAll('.modal'),
+        loaded = [],
+        buttons = document.querySelectorAll('.btn');
 
-    function loadVideo(tweets) {
-        vjs = VideoJS('video');
+    function loadVideo(tweets, trackid, elementid) {
+        // Only load videos once
+        if (loaded.indexOf(trackid) > -1) {
+            return;
+        }
+        loaded.push(trackid);
+        vjs = VideoJS(document.getElementById(elementid).querySelector('video'));
         vjs.ready(function () {
-            var req = new XMLHttpRequest(),
-                onReqLoad,
-                chapterObject;
+            var variables = {},
+                i, l;
 
-            onReqLoad = function (response) {
-                var variables = {},
-                    i, l;
+            for (i = 0, l = Math.min(9, tweets.length); i < l; i++) {
+                variables['tweet' + (i + 1)] = tweets[i].cleanedText;
+            }
 
-                for (i = 0, l = Math.min(9, tweets.length); i < l; i++) {
-                    variables['tweet' + (i + 1)] = tweets[i].cleanedText;
-                }
-
-                chapterObject = JSON.parse(response.target.responseText);
-                hapyak.viewer({
-                    gzip: true,
-                    player: vjs,
-                    environment: 'feature',
-                    userId: 'kaiiscranky',
-                    apiKey: '1a88de4bb4d7f969c1282ff5910602f9',
-                    videoType: 'videojs',
-                    videoHeight: 540,
-                    videoWidth: 960,
-                    trackId: chapterObject[videoName],
-                    autoplay: false,
-                    variables: variables
-                });
-            };
-
-            req.onload = onReqLoad;
-            req.open('get', 'js/data.json', true);
-            req.send();
+            hapyak.viewer({
+                gzip: true,
+                player: vjs,
+                environment: 'feature',
+                userId: 'kaiiscranky',
+                apiKey: '1a88de4bb4d7f969c1282ff5910602f9',
+                videoType: 'videojs',
+                trackId: trackid,
+                autoplay: false,
+                variables: variables
+            });
         });
     }
 
@@ -100,19 +96,29 @@
 
     window.receiveTweets = function(data) {
         var i,
-            tweets = data.results;
-        for (i = 0; i < tweets.length; i++) {
-            tweets[i].sortProfile = profileTweet(tweets[i]);
+            data_tweets = data.results;
+
+        for (i = 0; i < data_tweets.length; i++) {
+            data_tweets[i].sortProfile = profileTweet(data_tweets[i]);
         }
 
-        tweets.sort(tweetSort);
+        data_tweets.sort(tweetSort);
 
-        loadVideo(tweets);
+        tweets = data_tweets;
     };
 
-    sourceElem.src = 'http://video.chirls.com/geeta/' + videoName + '.mp4';
-    sourceElem.type = 'video/mp4';
-    document.getElementById('video').appendChild(sourceElem);
+    for (i = 0, l = modals.length; i < l; i++) {
+        $('#' + modals[i].id).on('hide', function() {
+            var video = this.querySelector('video');
+        });
+    }
+
+    for (i = 0, l = buttons.length; i < l; i++) {
+        buttons[i].addEventListener('click', function() {
+            console.log(this.getAttribute('data-trackid'));
+            loadVideo(tweets, this.getAttribute('data-trackid'), this.getAttribute('data-target').split('#')[1]);
+        }, false);
+    }
 
     loadTweets();
 })();

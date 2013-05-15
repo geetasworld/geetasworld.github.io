@@ -20,7 +20,7 @@
 	background-color: rgb(0, 0, 0);
 }
 
-.modal-body > video {
-	height: 99%;
-	width: 99%;
+.modal-body > div {
+	height: 98%;
+	width: 98%;
 }

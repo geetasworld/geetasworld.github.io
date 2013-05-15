@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link rel="stylesheet" href="//vjs.zencdn.net/c/video-js.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<script src="//vjs.zencdn.net/c/video.js"></script>
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<link href="external/css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link href="css/landingpage.css" rel="stylesheet" media="screen">
 		<script src="external/js/bootstrap.min.js"></script>
-		<script src="js/landingpage.js"></script>
+		<link href="css/landingpage.css" rel="stylesheet" media="screen">
+		<script type="text/javascript" src="http://cdn-assets.hapyak.com/js/hapyak.gz.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/player.css"/>
 	</head>
 	<body>
 		<div class="row">
 			<div class="span12">
-				<button class="btn" data-toggle="modal" data-target="#video1">1</button>
-				<button class="btn" data-toggle="modal" data-target="#video2">2</button>
-				<button class="btn" data-toggle="modal" data-target="#video3">3</button>
-				<button class="btn" data-toggle="modal" data-target="#video4">4</button>
+				<button class="btn" data-trackid="2627" data-toggle="modal" data-target="#video1">Placeholder</button>
+				<button class="btn" data-trackid="2643" data-toggle="modal" data-target="#video2">Chapter 1</button>
+				<button class="btn" data-trackid="2645" data-toggle="modal" data-target="#video3">Chapter 2</button>
 			</div>
 			<div id="video1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-body">
-					<video>
+					<video width="100%" height="100%">
 						<source src="http://video.chirls.com/geeta/placeholder.mp4" type="video/mp4" />
 					</video>
 				</div>
 			</div>
+			<div id="video2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-body">
+					<video width="100%" height="100%">
+						<source src="http://video.chirls.com/geeta/chapter1.mp4" type="video/mp4" />
+					</video>
+				</div>
+			</div>
+			<div id="video3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-body">
+					<video width="100%" height="100%">
+						<source src="http://video.chirls.com/geeta/chapter4.mp4" type="video/mp4" />
+					</video>
+				</div>
+			</div>
 		</div>
+		<script src="js/main.js"></script>
 	</body>
 </html

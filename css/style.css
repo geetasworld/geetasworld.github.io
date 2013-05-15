@@ -34,3 +34,12 @@ body.playing {
     cursor: pointer;
 }
 */
+
+/*
+Apparently this is the reccomended method of setting videojs to be 100% of its container
+http://help.videojs.com/discussions/questions/249-how-to-set-video-height-and-width-to-fill-available-space
+*/
+video {
+    height: 100% !important;
+    width: 100% !important;
+}
