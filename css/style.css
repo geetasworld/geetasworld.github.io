@@ -5,7 +5,7 @@ body {
     background-color: black;
     color: black;
     font-family: 'Open Sans';
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -38,7 +38,8 @@ body {
     position: absolute;
     font-style: italic;
     color: #FBBA15;
-    opacity: 0.5
+    opacity: 0.3;
+    text-transform: uppercase;
 }
 
 .chapter.active {
@@ -46,20 +47,60 @@ body {
     cursor: pointer;
 }
 
+.chapter > .number {
+    font-size: 36px;
+}
+
 .chapter > .title {
     background-color: #FBBA15;
     padding: 6px 20px;
     color: black;
     margin: 4px 0;
+    text-transform: none;
+}
+
+.chapter > .title:before {
+    content: open-quote;
+}
+
+.chapter > .title:after {
+    content: close-quote;
 }
 
 #chapter1 {
-    top: 595px;
-    left: 442px;
+    top: 81%;
+    left: 36%;
     text-align: right;
+}
+
+#chapter1 > .number,
+#chapter2 > .number {
     padding-right: 20px;
 }
 
+#chapter2 {
+    top: 52%;
+    left: 62%;
+    text-align: right;
+}
+
+#chapter3 {
+    top: 61%;
+    left: 9%;
+    text-align: left;
+}
+
+#chapter4 {
+    top: 24%;
+    left: 9%;
+    text-align: left;
+}
+
+#chapter5 {
+    top: 19%;
+    left: 57%;
+    text-align: left;
+}
 /*
 Apparently this is the reccomended method of setting videojs to be 100% of its container
 http://help.videojs.com/discussions/questions/249-how-to-set-video-height-and-width-to-fill-available-space
