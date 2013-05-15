@@ -10,37 +10,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:600,600italic' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-			<!--
-		<div class="row">
-			<div class="span12">
-				<button class="btn" data-trackid="2627" data-toggle="modal" data-target="#video1">Placeholder</button>
-				<button class="btn" data-trackid="2643" data-toggle="modal" data-target="#video2">Chapter 1</button>
-				<button class="btn" data-trackid="2645" data-toggle="modal" data-target="#video3">Chapter 2</button>
-			</div>
-			<div id="video1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-body">
-					<video width="100%" height="100%">
-						<source src="http://video.chirls.com/geeta/placeholder.mp4" type="video/mp4" />
-					</video>
-				</div>
-			</div>
-			<div id="video2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-body">
-					<video width="100%" height="100%">
-						<source src="http://video.chirls.com/geeta/chapter1.mp4" type="video/mp4" />
-					</video>
-				</div>
-			</div>
-			<div id="video3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-body">
-					<video width="100%" height="100%">
-						<source src="http://video.chirls.com/geeta/chapter4.mp4" type="video/mp4" />
-					</video>
-				</div>
-			</div>
-		</div>
-		-->
-		<div class="main">
+		<div class="main initial">
 			<div class="container">
 				<video id="background" autoplay loop>
 					<source src="http://videos.chirls.com/geeta/bg.mp4" type="video/mp4"/>
@@ -48,36 +18,38 @@
 					<source src="video/bg.mp4" type="video/mp4"/>
 					<source src="video/bg.webm" type="video/webm"/>
 				</video>
-				<img id="path" src="imgs/path.png"/>
 
-				<img id="title-logo" src="imgs/title-logo.png"/>
+				<div id="menu">
+					<img id="path" src="imgs/path.png"/>
+					<img id="title-logo" src="imgs/title-logo.png"/>
 
-				<!--
-				Chapter Buttons:
-				-->
-				<div class="chapter" id="chapter1" data-trackid="2643" data-toggle="modal" data-target="#video1">
-					Chapter <span class="number">1</span>
-					<div class="title">I am a taxi driver</div>
-				</div>
+					<!--
+					Chapter Buttons:
+					-->
+					<div class="chapter" id="chapter1" data-trackid="2643" data-toggle="modal" data-target="#video1">
+						Chapter <span class="number">1</span>
+						<div class="title">I am a taxi driver</div>
+					</div>
 
-				<div class="chapter" id="chapter2" data-trackid="2648" data-toggle="modal" data-target="#video2">
-					Chapter <span class="number">2</span>
-					<div class="title">What's a girl doing here?</div>
-				</div>
+					<div class="chapter" id="chapter2" data-trackid="2648" data-toggle="modal" data-target="#video2">
+						Chapter <span class="number">2</span>
+						<div class="title">What's a girl doing here?</div>
+					</div>
 
-				<div class="chapter" id="chapter3">
-					Chapter <span class="number">3</span>
-					<div class="title">My father doesn't know better</div>
-				</div>
+					<div class="chapter" id="chapter3" data-trackid="2649" data-toggle="modal" data-target="#video3">
+						Chapter <span class="number">3</span>
+						<div class="title">My father doesn't know better</div>
+					</div>
 
-				<div class="chapter" id="chapter4" data-trackid="2645" data-toggle="modal" data-target="#video2">
-					Chapter <span class="number">4</span>
-					<div class="title">Women don't do that in this country</div>
-				</div>
+					<div class="chapter" id="chapter4" data-trackid="2645" data-toggle="modal" data-target="#video2">
+						Chapter <span class="number">4</span>
+						<div class="title">Women don't do that in this country</div>
+					</div>
 
-				<div class="chapter" id="chapter5">
-					Chapter <span class="number">5</span>
-					<div class="title">We've got wings now</div>
+					<div class="chapter" id="chapter5">
+						Chapter <span class="number">5</span>
+						<div class="title">We've got wings now</div>
+					</div>
 				</div>
 			</div>
 		</div>

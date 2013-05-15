@@ -13,6 +13,10 @@
         img = document.getElementById('path'),
         buttons = document.querySelectorAll('.chapter');
 
+    function fadeIn() {
+        document.querySelector('.main').className = 'main';
+    }
+
     function loadVideo(trackid, elementid) {
         // Only load videos once
         if (loaded.indexOf(trackid) > -1) {
@@ -156,10 +160,21 @@
 
     function resize() {
         var height = img.offsetHeight;
-
         container.style.height = height + 'px';
     }
+
     window.addEventListener('resize', resize, false);
     resize();
     loadTweets();
+
+    var background = document.getElementById('background');
+    if (background.duration) {
+        setTimeout(fadeIn, 1000);
+    } else {
+        setTimeout(fadeIn, 4000);
+        document.getElementById('background').addEventListener('loadedmetadata', function () {
+            console.log('loadedmetadata');
+            setTimeout(fadeIn, 1000);
+        }, false);
+    }
 })();

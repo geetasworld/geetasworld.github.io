@@ -26,6 +26,32 @@ body {
     display: inline-block;
 }
 
+#menu {
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    -ms-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+    opacity: 1;
+}
+
+#background {
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    -ms-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+    opacity: 0.6;
+}
+
+.initial #menu {
+    opacity: 0;
+}
+
+.initial #background {
+    opacity: 1;
+}
+
 #background,
 #path {
     position: absolute;
