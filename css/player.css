@@ -4,34 +4,57 @@
 	color: white;
 	border: none;
 	box-shadow: none;
-	background-color: rgba(20, 20, 20, 0.4);
-	padding: 12px;
 	border-radius: 0;
 	font-family: 'Helvetica Neue', 'Helvetica';
+	background-image: url('../imgs/twitter-bg.png');
+	background-repeat: no-repeat;
+	background-color: rgb(33, 169, 225);
+	margin-left: -110px;
+	padding-left: 110px;
+	min-height: 69px;
 }
 
-.hapyak-annotation-container > .popcorn-bookmark-title {
+div.hapyak-annotation-container > .popcorn-bookmark-title {
 	height: 30%;
 	width: 45%;
 	left: 50%;
-	top: 50%;
+	top: 30%;
 	background-color: rgba(0, 0, 0, 0);
 }
 
-.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child {
+div.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child {
 	background-color: rgba(0, 0, 0, 0);
+	background-image: url('../imgs/title-logo.png');
+	background-repeat: no-repeat;
+	background-size: 90%;
+	background-position-x: 25px;
+	background-position-y: 0px;
+	padding-top: 140px;
 }
 
-.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child > div {
+div.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child > div::first-line {
+	text-transform: uppercase;
+	background-color: rgb(0,0,0);
+}
+
+div.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child > div {
 	color: black;
-	background-color: rgb(255, 198, 21);
+	background-color: rgb(251,186,21);
 	font-family: 'Open Sans', sans-serif;
 	line-height: 60px;
 	font-size: 38px;
-	font-weight: bold;
+	font-weight: bolder;
 }
 
 .hapyak-annotation-container > .popcorn-bookmark-title > div > .popcorn-bookmark-close {
+	display: none;
+}
+
+.hapyak-annotation-container > .popcorn-bookmark-title > div > .popcorn-bookmark-next {
+	display: none;
+}
+
+.hapyak-annotation-container > .popcorn-bookmark-title > div > .popcorn-bookmark-previous {
 	display: none;
 }
 
