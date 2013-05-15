@@ -7,9 +7,11 @@
         tweets,
         modals = document.querySelectorAll('.modal'),
         loaded = [],
-        buttons = document.querySelectorAll('.chapter'),
         playableVideo = 0,
-        variables = {};
+        variables = {},
+        container = document.querySelector('.main'),
+        img = document.getElementById('path'),
+        buttons = document.querySelectorAll('.chapter');
 
     function loadVideo(trackid, elementid) {
         // Only load videos once
@@ -108,8 +110,6 @@
 
                 $(this).off('show', onShow);
 
-                video.currentTime = 0;
-
                 playableVideo = Math.max(index + 1, playableVideo);
 
                 video.addEventListener('ended', function endedEvent() {
@@ -119,8 +119,11 @@
 
                 video.play();
 
+            });
+
+            $(this.getAttribute('data-target')).on('hide', function onHide() {
                 makeVideoPlayable(playableVideo);
-            })
+            });
         }, false);
     }
 
@@ -151,5 +154,12 @@
         });
     }
 
+    function resize() {
+        var height = img.offsetHeight;
+
+        container.style.height = height + 'px';
+    }
+    window.addEventListener('resize', resize, false);
+    resize();
     loadTweets();
 })();

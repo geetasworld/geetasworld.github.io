@@ -107,3 +107,12 @@ body {
     left: 57%;
     text-align: left;
 }
+
+.main {
+    min-width: 960px;
+}
+
+video {
+    width: 100% !important;
+    height: 100% !important;
+}
