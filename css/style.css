@@ -7,33 +7,11 @@ body {
     font-family: arial;
 }
 
-/*
-body.playing {
-    background-color: black;
-    color: white;
-}
-*/
-
 #container {
     width: 960px;
     height: 540px;
     margin: auto;
 }
-
-/*
-.select > div,
-.select > input {
-    border: none;
-    font-size: 30px;
-    margin: 20px;
-    display: block;
-    width: auto;
-}
-
-.select > div {
-    cursor: pointer;
-}
-*/
 
 /*
 Apparently this is the reccomended method of setting videojs to be 100% of its container
