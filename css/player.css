@@ -1,5 +1,4 @@
-.hapyak-play-box > .hapyak-annotation-container > .popcorn-pop,
-#video > .hapyak-annotation-container > .popcorn-pop {
+div.hapyak-annotation-container > .popcorn-pop {
 	background-color: transparent;
 	color: white;
 	border: none;
@@ -46,19 +45,19 @@ div.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child > di
 	font-weight: bolder;
 }
 
-.hapyak-annotation-container > .popcorn-bookmark-title > div > .popcorn-bookmark-close {
+div.hapyak-annotation-container > .popcorn-bookmark-title > div > .popcorn-bookmark-close {
 	display: none;
 }
 
-.hapyak-annotation-container > .popcorn-bookmark-title > div > .popcorn-bookmark-next {
+div.hapyak-annotation-container > .popcorn-bookmark-title > div > .popcorn-bookmark-next {
 	display: none;
 }
 
-.hapyak-annotation-container > .popcorn-bookmark-title > div > .popcorn-bookmark-previous {
+div.hapyak-annotation-container > .popcorn-bookmark-title > div > .popcorn-bookmark-previous {
 	display: none;
 }
 
-.hapyak-annotation-container > .hapyak-transition-fade {
+div.hapyak-annotation-container > .hapyak-transition-fade {
 	-webkit-transition: none;
 	-moz-transition: none;
 	-o-transition: none;
@@ -68,7 +67,7 @@ div.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child > di
 	opacity: 0;
 }
 
-.hapyak-annotation-container > .active.hapyak-transition-fade {
+div.hapyak-annotation-container > .active.hapyak-transition-fade {
 	-webkit-transition: opacity .5s ease,visibility .5s ease;
 	-moz-transition: opacity .5s ease,visibility .5s ease;
 	-o-transition: opacity .5s ease,visibility .5s ease;
@@ -78,7 +77,7 @@ div.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child > di
 	opacity: 1;
 }
 
-.hapyak-annotation-container > .hapyak-transition-slide-up.active {
+div.hapyak-annotation-container > .hapyak-transition-slide-up.active {
     -webkit-transition: margin-top .4s ease,visibility .4s ease;
     -moz-transition: margin-top .4s ease,visibility .4s ease;
     -o-transition: margin-top .4s ease,visibility .4s ease;
@@ -88,7 +87,7 @@ div.hapyak-annotation-container > .popcorn-bookmark-title > div:first-child > di
     margin-top: 0;
 }
 
-.hapyak-annotation-container > .hapyak-transition-slide-up {
+div.hapyak-annotation-container > .hapyak-transition-slide-up {
 	-webkit-transition: none;
 	-moz-transition: none;
 	-o-transition: none;
