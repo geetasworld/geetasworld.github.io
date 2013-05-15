@@ -5,12 +5,16 @@ div.hapyak-annotation-container > .popcorn-pop {
 	box-shadow: none;
 	border-radius: 0;
 	font-family: 'Helvetica Neue', 'Helvetica';
+	min-height: 69px;
+}
+
+
+div.hapyak-annotation-container > .popcorn-pop.tweet {
 	background-image: url('../imgs/twitter-bg.png');
 	background-repeat: no-repeat;
 	background-color: rgb(33, 169, 225);
 	margin-left: -110px;
 	padding-left: 110px;
-	min-height: 69px;
 }
 
 div.hapyak-annotation-container > .popcorn-bookmark-title {
