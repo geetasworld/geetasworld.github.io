@@ -1,6 +1,23 @@
 (function () {
     'use strict';
 
+    var twitterData;
+
+    window.twitterCallback = function (data) {
+        console.log(data);
+        var scripts = document.querySelectorAll('script[data-twitter-data]');
+        Array.prototype.forEach.call(scripts, function (script) {
+            script.parentNode.removeChild(script);
+        });
+    }
+
+    function getTwitterData = function () {
+        var s = document.createElement('script');
+        s.src = '//search.twitter.com/search.json?q=%23womendrivers&callback=twitterCallback';
+        s.setAttribute('data-twitter-data', true);
+        document.head.appendChild(s);
+    };
+
     var vjs,
         i,
         l,
@@ -28,7 +45,8 @@
         }
 
         joinTwitterButton.addEventListener('click', function (e) {
-            window.open('https://twitter.com/share?text=' + escape(joinTextArea.value) + '&url=' + escape('http://geetasworld.github.io/'), '_blank');
+            window.open('https://twitter.com/share?text=' + escape(joinTextArea.value) +
+                '&url=' + escape('http://geetasworld.github.io/'), '_blank');
         }, false);
 
         joinButton.addEventListener('click', onJoinButtonClick, false);
