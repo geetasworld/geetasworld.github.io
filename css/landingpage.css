@@ -36,7 +36,7 @@
 	margin: 0;
 	position: fixed;
 	width: 100%;
-	height: 77px;
+	height: 61px;
 	left: 0;
 	top: 0;
 	z-index: 9999;
@@ -45,7 +45,7 @@
 #menu-buttons-container ul {
 	list-style: none;
 	margin: 0 auto;
-	width: 1235px;
+	width: 1120px;
 	height: 100%;
 }
 
@@ -58,24 +58,29 @@
 	text-align: center;
 	color: #fff;
 	font-family: 'Open Sans';
-	line-height: 65px;
+	line-height: 50px;
 	text-transform: uppercase;
 	font-style: italic;
+	-webkit-user-select: none;
+		 -moz-user-select: none;
+		   ms-user-select: none;
+		    o-user-select: none;
+		      user-select: none;
 }
 
 #about-button {
-	width: 207px;
-	background-image: url('../imgs/5 ABOUT Button Box INACTIVE.png');
+	width: 185px;
+	background-image: url('../imgs/ABOUT Button Box INACTIVE-19-19-19.png');
 }
 
 #about-button:active {
-	background-image: url('../imgs/5 ABOUT Button Box ACTIVE-19.png');
+	background-image: url('../imgs/ABOUT Button Box ACTIVE-19-19.png');
 	color: rgb(255, 198, 21);
 }
 
 #join-button {
-	width: 473px;
-	background-image: url('../imgs/JOIN THE CONVERSATION Button Box INACTIVE-20.png');
+	width: 431px;
+	background-image: url('../imgs/JOIN THE CONVERSATION Button Box INACTIVE-20-20.png');
 }
 
 #join-button:active {
@@ -84,21 +89,96 @@
 }
 
 #saved-videos-button {
-	width: 270px;
-	background-image: url('../imgs/SAVED VIDEOS Button Box INACTIVE-22.png');
+	width: 300px;
+	background-image: url('../imgs/RELATED VIDEOS Button Box INACTIVE-22-22.png');
 }
 
 #saved-videos-button:active {
-	background-image: url('../imgs/SAVED VIDEOS Button Box ACTIVE-22-22.png');
+	background-image: url('../imgs/RELATED VIDEOS Button Box ACTIVE-22.png');
 	color: rgb(255, 198, 21);
 }
 
 #share-button {
-	width: 270px;
-	background-image: url('../imgs/SHARE Button Box INACTIVE-21.png');
+	width: 185px;
+	background-image: url('../imgs/SHARE Button Box INACTIVE-21-21.png');
 }
 
 #share-button:active {
 	background-image: url('../imgs/SHARE Button Box ACTIVE-21.png');
 	color: rgb(255, 198, 21);
 }
+
+.overlay {
+	position: relative;
+	top: 100px;
+	z-index: 9998;
+	color: #fff;
+}
+
+.overlay h1 {
+	text-align: center;
+	width: 100%;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-style: italic;
+}
+
+#join-overlay {
+	width: 800px;
+	margin: 0 auto;
+	-webkit-transition: 1s opacity, 1s visibility;
+		 -moz-transition: 1s opacity, 1s visibility;
+			-ms-transition: 1s opacity, 1s visibility;
+			 -o-transition: 1s opacity, 1s visibility;
+			    transition: 1s opacity, 1s visibility;
+	padding: 5px;
+}
+
+.hidden {
+	opacity: 0;
+	visibility: 0;
+}
+
+#join-overlay > div {
+	background-color: rgb(35, 169, 225);
+}
+
+#join-twitter-text {
+	height: 150px;
+	position: relative;
+}
+
+#join-twitter-text textarea {
+	position: absolute;
+	top: 30px;
+	left: 5px;
+	width: 775px;
+	height: 100px;
+	font-size: 18px;
+	background: transparent;
+ 	resize: none;
+ 	border: none;
+ 	border: 0;
+ 	-webkit-box-shadow: none;
+ 		 -moz-box-shadow: none;
+ 		  -ms-box-shadow: none;
+ 		   -o-box-shadow: none;
+ 		      box-shadow: none;
+ 	color: #fff;
+}
+
+
+#join-twitter-button {
+	height: 40px;
+	text-decoration: underline;
+	background-image: url('../imgs/twitter-bird-dark-bgs.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size: 40px 40px;
+	cursor: pointer;
+}
+
+#join-twitter-feed {
+	height: 300px;
+}
+

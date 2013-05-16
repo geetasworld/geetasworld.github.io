@@ -13,6 +13,27 @@
         img = document.getElementById('path'),
         buttons = document.querySelectorAll('.chapter');
 
+    function setupMenuButtons () {
+        var aboutButton = document.querySelector('#about-button');
+        var shareButton = document.querySelector('#share-button');
+        var savedVideosButton = document.querySelector('#saved-videos-button');
+        var joinButton = document.querySelector('#join-button');
+
+        var joinOverlay = document.querySelector('#join-overlay');
+        var joinTextArea = joinOverlay.querySelector('textarea');
+        var joinTwitterButton = document.querySelector('#join-twitter-button');
+
+        function onJoinButtonClick (e) {
+            joinOverlay.classList.remove('hidden');
+        }
+
+        joinTwitterButton.addEventListener('click', function (e) {
+            window.open('https://twitter.com/share?text=' + escape(joinTextArea.value) + '&url=' + escape('http://geetasworld.github.io/'), '_blank');
+        }, false);
+
+        joinButton.addEventListener('click', onJoinButtonClick, false);
+    }
+
     function fadeIn() {
         document.querySelector('.main').className = 'main';
     }
@@ -177,4 +198,6 @@
             setTimeout(fadeIn, 1000);
         }, false);
     }
+    background.volume = 0;
+    setupMenuButtons();
 })();
