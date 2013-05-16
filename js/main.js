@@ -151,14 +151,15 @@
         button.addEventListener('click', function() {
             $(this.getAttribute('data-target')).on('show', function onShow() {
                 var video = this.querySelector('video'),
-                    self = this;
+                    self = this,
+                    $self = this;
 
-                $(this).off('show', onShow);
+                $self.off('show', onShow);
 
                 playableVideo = Math.max(index + 1, playableVideo);
 
                 video.addEventListener('ended', function endedEvent() {
-                    $(self).modal('hide');
+                    $self.modal('hide');
                     this.removeEventListener('ended', endedEvent, false);
                 }, false);
 
