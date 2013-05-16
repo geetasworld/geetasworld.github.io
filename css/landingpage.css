@@ -124,7 +124,7 @@
 }
 
 #join-overlay {
-	width: 800px;
+	width: 600px;
 	margin: 0 auto;
 	padding: 5px;
 }
@@ -143,7 +143,16 @@
 }
 
 #join-overlay > div {
+	position: relative;
+	margin-bottom: 15px;
 	background-color: rgb(35, 169, 225);
+}
+
+#join-overlay > div > img {
+	position: absolute;
+	top: -7px;
+	left: -24px;
+	width: 50px;
 }
 
 #join-twitter-text {
@@ -154,8 +163,8 @@
 #join-twitter-text textarea {
 	position: absolute;
 	top: 30px;
-	left: 5px;
-	width: 775px;
+	left: 2%;
+	width: 94%;
 	height: 100px;
 	font-size: 18px;
 	background: transparent;
@@ -170,18 +179,35 @@
  	color: #fff;
 }
 
-
 #join-twitter-button {
-	height: 40px;
+	height: 60px;
 	text-decoration: underline;
 	background-image: url('../imgs/twitter-bird-dark-bgs.png');
 	background-repeat: no-repeat;
-	background-position: 0px 0px;
-	background-size: 40px 40px;
+	background-position: 50px 0px;
+	background-size: contain;
 	cursor: pointer;
+}
+
+#join-twitter-button h1 {
+	padding-top: 10px;
 }
 
 #join-twitter-feed {
 	height: 300px;
 }
 
+#join-twitter-feed ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	height: 250px;
+}
+
+#join-twitter-feed li {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	margin: 5px;
+	padding: 5px;
+	margin-bottom: 3px;
+}

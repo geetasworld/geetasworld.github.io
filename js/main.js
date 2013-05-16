@@ -3,17 +3,9 @@
 
     var twitterData;
 
-    window.twitterCallback = function (data) {
-        console.log(data);
-        var scripts = document.querySelectorAll('script[data-twitter-data]');
-        Array.prototype.forEach.call(scripts, function (script) {
-            script.parentNode.removeChild(script);
-        });
-    }
-
     function getTwitterData () {
         var s = document.createElement('script');
-        s.src = '//search.twitter.com/search.json?q=%23womendrivers&callback=twitterCallback';
+        s.src = '//search.twitter.com/search.json?q=%23womendrivers&count=10&rpp=10&callback=twitterCallback';
         s.setAttribute('data-twitter-data', true);
         document.head.appendChild(s);
     };
@@ -39,11 +31,30 @@
         var joinOverlay = document.querySelector('#join-overlay');
         var joinTextArea = joinOverlay.querySelector('textarea');
         var joinTwitterButton = document.querySelector('#join-twitter-button');
+        var joinTwitterFeedList = document.querySelector('#join-twitter-feed ul');
 
         joinOverlay.classList.add('fadeable');
 
+        window.twitterCallback = function (data) {
+            var scripts = document.querySelectorAll('script[data-twitter-data]');
+            Array.prototype.forEach.call(scripts, function (script) {
+                script.parentNode.removeChild(script);
+            });
+            setTimeout(getTwitterData, 5000);
+            twitterData = data;
+
+            joinTwitterFeedList.innerHTML = '';
+            twitterData.results.forEach(function (result) {
+                var twitterTextDiv = document.createElement('li');
+                twitterTextDiv.innerHTML = result.text;
+                joinTwitterFeedList.appendChild(twitterTextDiv);
+            });
+        }
+
+        getTwitterData();
+
         function onJoinButtonClick (e) {
-            joinOverlay.classList.remove('hidden');
+            joinOverlay.classList.toggle('hidden');
         }
 
         joinTwitterButton.addEventListener('click', function (e) {
@@ -139,11 +150,12 @@
     function makeVideoPlayable(index) {
         var button;
 
-        if (index + 1 < playableVideo || index > playableVideo) {
+        if (index + 1 < playableVideo || index > playableVideo || index >= buttons.length) {
             return;
         }
 
         button = buttons[index];
+        console.log('hi', button, index, buttons.length);
         button.className = 'chapter active';
 
         loadVideo(button.getAttribute('data-trackid'), button.getAttribute('data-target').split('#')[1]);
@@ -154,7 +166,7 @@
                     self = this,
                     $self = this;
 
-                $self.off('show', onShow);
+                $(self).off('show', onShow);
 
                 playableVideo = Math.max(index + 1, playableVideo);
 
