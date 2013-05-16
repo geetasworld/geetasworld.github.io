@@ -126,12 +126,15 @@
 #join-overlay {
 	width: 800px;
 	margin: 0 auto;
+	padding: 5px;
+}
+
+.fadeable {
 	-webkit-transition: 1s opacity, 1s visibility;
 		 -moz-transition: 1s opacity, 1s visibility;
 			-ms-transition: 1s opacity, 1s visibility;
 			 -o-transition: 1s opacity, 1s visibility;
 			    transition: 1s opacity, 1s visibility;
-	padding: 5px;
 }
 
 .hidden {

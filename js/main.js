@@ -11,7 +11,7 @@
         });
     }
 
-    function getTwitterData = function () {
+    function getTwitterData () {
         var s = document.createElement('script');
         s.src = '//search.twitter.com/search.json?q=%23womendrivers&callback=twitterCallback';
         s.setAttribute('data-twitter-data', true);
@@ -39,6 +39,8 @@
         var joinOverlay = document.querySelector('#join-overlay');
         var joinTextArea = joinOverlay.querySelector('textarea');
         var joinTwitterButton = document.querySelector('#join-twitter-button');
+
+        joinOverlay.classList.add('fadeable');
 
         function onJoinButtonClick (e) {
             joinOverlay.classList.remove('hidden');
@@ -216,6 +218,6 @@
             setTimeout(fadeIn, 1000);
         }, false);
     }
-    background.volume = 0;
+
     setupMenuButtons();
 })();
