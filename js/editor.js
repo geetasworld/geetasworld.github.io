@@ -7,7 +7,7 @@
         login,
         path,
         videoName = window.location.hash && window.location.hash.substr(1) || 'placeholder',
-        videoUrl = 'http://video.chirls.com/geeta/' + videoName + '.mp4';
+        videoUrl = 'http://videos.mozilla.org/serv/webmademovies/geeta/' + videoName + '.mp4';
 
     //calculate css path
     path = window.location.href.split('/');
