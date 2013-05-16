@@ -24,11 +24,17 @@
         variables = {},
         container = document.querySelector('.main'),
         img = document.getElementById('path'),
-        buttons = document.querySelectorAll('.chapter');
+        buttons = document.querySelectorAll('.chapter'),
+        viewers = [];
 
     function resize() {
-        var height = img.offsetHeight;
+        var height = img.offsetHeight,
+            i;
         container.style.height = height + 'px';
+
+        for (i = 0; i < viewers.length; i++) {
+            viewers[i].resize();
+        }
     }
 
     function setupMenuButtons () {
@@ -99,7 +105,10 @@
                 videoType: 'videojs',
                 trackId: trackid,
                 autoplay: false,
-                variables: variables
+                variables: variables,
+                onLoad: function (viewer) {
+                    viewers.push(viewer);
+                }
             });
         });
     }
