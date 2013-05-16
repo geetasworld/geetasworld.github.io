@@ -4,7 +4,9 @@
 		<title>Geeta's World</title>
 		<link rel="stylesheet" href="//vjs.zencdn.net/c/video-js.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<!--
 		<link href="external/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	-->
 		<link href="css/landingpage.css" rel="stylesheet" media="screen">
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/player.css"/>
@@ -90,48 +92,57 @@
 		<!--
 		Video player containers
 		-->
-		<div id="video1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-body">
-				<video width="100%" height="100%" controls class="vjs-default-skin">
-					<source src="http://videos.mozilla.org/serv/webmademovies/geeta/chapter1.mp4" type="video/mp4" />
-				</video>
+		<div id="players">
+			<div id="video1">
+				<div class="modal-body">
+					<video width="100%" height="100%" controls class="vjs-default-skin">
+						<source src="http://videos.mozilla.org/serv/webmademovies/geeta/chapter1.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<span class="close">Back</span>
+			</div>
+
+			<div id="video2">
+				<div class="modal-body">
+					<video width="100%" height="100%" controls class="vjs-default-skin">
+						<source src="http://videos.mozilla.org/serv/webmademovies/geeta/chapter2.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<span class="close">Back</span>
+			</div>
+
+			<div id="video3">
+				<div class="modal-body">
+					<video width="100%" height="100%" controls class="vjs-default-skin">
+						<source src="http://videos.mozilla.org/serv/webmademovies/geeta/chapter3.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<span class="close">Back</span>
+			</div>
+
+			<div id="video4">
+				<div class="modal-body">
+					<video width="100%" height="100%" controls class="vjs-default-skin">
+						<source src="http://videos.mozilla.org/serv/webmademovies/geeta/chapter4.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<span class="close">Back</span>
+			</div>
+
+			<div id="video5">
+				<div class="modal-body">
+					<video width="100%" height="100%" controls class="vjs-default-skin">
+						<source src="http://videos.mozilla.org/serv/webmademovies/geeta/chapter5.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<span class="close">Back</span>
 			</div>
 		</div>
 
-		<div id="video2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-body">
-				<video width="100%" height="100%" controls class="vjs-default-skin">
-					<source src="http://videos.mozilla.org/serv/webmademovies/geeta/chapter2.mp4" type="video/mp4" />
-				</video>
-			</div>
-		</div>
-
-		<div id="video3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-body">
-				<video width="100%" height="100%" controls class="vjs-default-skin">
-					<source src="http://videos.mozilla.org/serv/webmademovies/geeta/chapter3.mp4" type="video/mp4" />
-				</video>
-			</div>
-		</div>
-
-		<div id="video4" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-body">
-				<video width="100%" height="100%" controls class="vjs-default-skin">
-					<source src="http://videos.mozilla.org/serv/webmademovies/geeta/chapter4.mp4" type="video/mp4" />
-				</video>
-			</div>
-		</div>
-
-		<div id="video5" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-body">
-				<video width="100%" height="100%" controls class="vjs-default-skin">
-					<source src="http://videos.mozilla.org/serv/webmademovies/geeta/chapter5.mp4" type="video/mp4" />
-				</video>
-			</div>
-		</div>
-
+		<!--
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="external/js/bootstrap.min.js"></script>
+		-->
 		<script src="//vjs.zencdn.net/c/video.js"></script>
 		<script type="text/javascript" src="http://cdn-assets.hapyak.com/js/hapyak.gz.js"></script>
 		<script src="js/main.js"></script>

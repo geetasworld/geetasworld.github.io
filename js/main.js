@@ -1,7 +1,11 @@
 (function () {
     'use strict';
 
-    var twitterData;
+    var twitterData,
+        chapters = [
+            2654, 2655, 2656, 2657, 2658
+        ],
+        background = document.getElementById('background');
 
     function getTwitterData () {
         var s = document.createElement('script');
@@ -11,8 +15,8 @@
     };
 
     var vjs,
-        i,
-        l,
+        //i,
+        //l,
         tweets,
         modals = document.querySelectorAll('.modal'),
         loaded = [],
@@ -21,6 +25,11 @@
         container = document.querySelector('.main'),
         img = document.getElementById('path'),
         buttons = document.querySelectorAll('.chapter');
+
+    function resize() {
+        var height = img.offsetHeight;
+        container.style.height = height + 'px';
+    }
 
     function setupMenuButtons () {
         var aboutButton = document.querySelector('#about-button');
@@ -49,6 +58,8 @@
                 twitterTextDiv.innerHTML = result.text;
                 joinTwitterFeedList.appendChild(twitterTextDiv);
             });
+
+            resize();
         }
 
         getTwitterData();
@@ -63,6 +74,8 @@
         }, false);
 
         joinButton.addEventListener('click', onJoinButtonClick, false);
+
+        resize();
     }
 
     function fadeIn() {
@@ -148,7 +161,18 @@
     }
 
     function makeVideoPlayable(index) {
-        var button;
+        var button,
+            videoDiv,
+            video,
+            closeButton;
+
+        function hideVideo() {
+            video.pause();
+            background.play();
+            videoDiv.className = '';
+            container.style.display = '';
+            resize();
+        }
 
         if (index + 1 < playableVideo || index > playableVideo || index >= buttons.length) {
             return;
@@ -158,31 +182,29 @@
         console.log('hi', button, index, buttons.length);
         button.className = 'chapter active';
 
-        loadVideo(button.getAttribute('data-trackid'), button.getAttribute('data-target').split('#')[1]);
+        loadVideo(chapters[index], 'video' + (index + 1));
 
-        button.addEventListener('click', function() {
-            $(this.getAttribute('data-target')).on('show', function onShow() {
-                var video = this.querySelector('video'),
-                    self = this,
-                    $self = this;
-
-                $(self).off('show', onShow);
-
-                playableVideo = Math.max(index + 1, playableVideo);
-
-                video.addEventListener('ended', function endedEvent() {
-                    $self.modal('hide');
-                    this.removeEventListener('ended', endedEvent, false);
-                }, false);
-
-                video.play();
-
-            });
-
-            $(this.getAttribute('data-target')).on('hide', function onHide() {
-                makeVideoPlayable(playableVideo);
-            });
+        videoDiv = document.getElementById('video' + (index + 1));
+        video = videoDiv.querySelector('video');
+        video.addEventListener('ended', function () {
+            hideVideo();
+            video.currentTime = 0;
         }, false);
+
+        button.addEventListener('click', function () {
+            background.pause();
+            video.play();
+            videoDiv.className = 'active';
+            container.style.display = 'none';
+
+            //playableVideo = Math.max(index + 1, playableVideo);
+            //$(this.getAttribute('data-target')).on('hide', function onHide() {
+            //    makeVideoPlayable(playableVideo);
+            //});
+        }, false);
+
+        closeButton = videoDiv.querySelector('.close');
+        closeButton.addEventListener('click', hideVideo, false);
     }
 
     window.receiveTweets = function(data) {
@@ -212,23 +234,19 @@
         makeVideoPlayable(4); playableVideo++;
     };
 
+    /*
     for (i = 0, l = modals.length; i < l; i++) {
         $('#' + modals[i].id).on('hide', function() {
             var video = this.querySelector('video');
             video.pause();
         });
     }
-
-    function resize() {
-        var height = img.offsetHeight;
-        container.style.height = height + 'px';
-    }
+    */
 
     window.addEventListener('resize', resize, false);
     resize();
     loadTweets();
 
-    var background = document.getElementById('background');
     if (background.duration) {
         setTimeout(fadeIn, 1000);
     } else {
