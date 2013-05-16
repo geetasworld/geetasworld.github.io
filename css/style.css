@@ -45,6 +45,7 @@ body {
 }
 
 .initial #menu {
+    visibility: hidden;
     opacity: 0;
 }
 
