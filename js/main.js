@@ -150,11 +150,12 @@
     function makeVideoPlayable(index) {
         var button;
 
-        if (index + 1 < playableVideo || index > playableVideo) {
+        if (index + 1 < playableVideo || index > playableVideo || index >= buttons.length) {
             return;
         }
 
         button = buttons[index];
+        console.log('hi', button, index, buttons.length);
         button.className = 'chapter active';
 
         loadVideo(button.getAttribute('data-trackid'), button.getAttribute('data-target').split('#')[1]);
@@ -165,7 +166,7 @@
                     self = this,
                     $self = $(this);
 
-                $self.off('show', onShow);
+                $(self).off('show', onShow);
 
                 playableVideo = Math.max(index + 1, playableVideo);
 

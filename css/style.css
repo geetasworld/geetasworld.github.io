@@ -103,13 +103,49 @@ body {
 #chapter1 {
     top: 81%;
     left: 36%;
+    z-index: 10;
     text-align: right;
+}
+
+#chapter1 {
+    z-index: 10;
+}
+
+#chapter1 > img, 
+#chapter2 img, 
+#chapter3 img, 
+#chapter4 img, 
+#chapter5 img {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top:0;
+    left:0;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
+    -webkit-transition-delay: now;
+    -webkit-transition-property: perspective;
+    transition-property: perspective;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#chapter1:hover img,
+#chapter2:hover img,
+#chapter3:hover img,
+#chapter4:hover img,
+#chapter5:hover img {
+    opacity: 1;
+    z-index: 1;
 }
 
 #chapter1 > .number,
 #chapter2 > .number {
     padding-right: 20px;
 }
+
 
 #chapter2 {
     top: 52%;
