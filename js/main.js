@@ -190,6 +190,13 @@
         }
 
         makeVideoPlayable(0);
+
+        //Abhi asked to make all videos playable right away
+        playableVideo = 1;
+        makeVideoPlayable(1); playableVideo++;
+        makeVideoPlayable(2); playableVideo++;
+        makeVideoPlayable(3); playableVideo++;
+        makeVideoPlayable(4); playableVideo++;
     };
 
     for (i = 0, l = modals.length; i < l; i++) {
