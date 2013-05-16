@@ -54,7 +54,7 @@
         getTwitterData();
 
         function onJoinButtonClick (e) {
-            joinOverlay.classList.remove('hidden');
+            joinOverlay.classList.toggle('hidden');
         }
 
         joinTwitterButton.addEventListener('click', function (e) {

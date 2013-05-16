@@ -143,7 +143,3 @@ video {
     width: 100% !important;
     height: 100% !important;
 }
-
-#join-overlay.hidden {
-    display: none;
-}
