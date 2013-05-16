@@ -163,7 +163,7 @@
             $(this.getAttribute('data-target')).on('show', function onShow() {
                 var video = this.querySelector('video'),
                     self = this,
-                    $self = this;
+                    $self = $(this);
 
                 $self.off('show', onShow);
 
