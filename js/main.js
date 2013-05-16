@@ -14,8 +14,7 @@
         document.head.appendChild(s);
     };
 
-    var vjs,
-        //i,
+    var //i,
         //l,
         tweets,
         modals = document.querySelectorAll('.modal'),
@@ -94,7 +93,7 @@
             return;
         }
         loaded.push(trackid);
-        vjs = VideoJS(document.getElementById(elementid).querySelector('video'));
+        var vjs = VideoJS(document.getElementById(elementid).querySelector('video'));
         vjs.ready(function () {
             hapyak.viewer({
                 gzip: true,
